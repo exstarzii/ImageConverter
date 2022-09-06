@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="pathBox" HorizontalAlignment="Left" Margin="28,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="510" Height="28"/>
-        <Button x:Name="fileChooseBut" Content="Обзор" HorizontalAlignment="Left" Margin="556,189,0,0" VerticalAlignment="Top" Height="28" Width="179" Click="fileChooseBut_Click"/>
+        <TextBox x:Name="pathBox" HorizontalAlignment="Left" Margin="28,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="510" Height="63" IsReadOnly="True"/>
+        <Button x:Name="fileChooseBut" Content="Обзор" HorizontalAlignment="Left" Margin="556,189,0,0" VerticalAlignment="Top" Height="63" Width="179" Click="fileChooseBut_Click"/>
         <Button x:Name="fileChooseBut_Copy" Content="Конвертировать в ч\б" HorizontalAlignment="Left" Margin="76,320,0,0" VerticalAlignment="Top" Height="28" Width="611" Click="fileChooseBut_Copy_Click"/>
         <Label x:Name="label_Copy" Content="Выбранное изображение" HorizontalAlignment="Left" Margin="28,158,0,0" VerticalAlignment="Top" Width="343"/>
 

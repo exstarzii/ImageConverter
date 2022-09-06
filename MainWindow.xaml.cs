@@ -37,10 +37,12 @@ namespace ImageConverter
                 MessageBox.Show("Выберите файл для конвертации", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            
 
-            Stream imageStreamSource = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-            PngBitmapDecoder decoder = new PngBitmapDecoder(imageStreamSource, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.Default);
+
+            BitmapDecoder decoder = BitmapDecoder.Create(
+            new Uri(filePath, UriKind.Absolute),
+            BitmapCreateOptions.PreservePixelFormat,
+            BitmapCacheOption.Default);
             BitmapSource bitmapSource = decoder.Frames[0];
 
             FormatConvertedBitmap newFormatedBitmapSource = new FormatConvertedBitmap();
@@ -51,11 +53,11 @@ namespace ImageConverter
 
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.FileName = "image"; // Default file name
-            saveFileDialog.DefaultExt = ".png"; // Default file extension
-            saveFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png"; // Filter files by extension
-                                                        // Show save file dialog box
-            // Process save file dialog box results
+            saveFileDialog.FileName = "image"; 
+            saveFileDialog.DefaultExt = ".png"; 
+            saveFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png";
+                                                                     
+                                                                      
             if (saveFileDialog.ShowDialog() == true)
             {
                 // Save document
